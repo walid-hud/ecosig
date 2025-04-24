@@ -1,0 +1,27 @@
+{
+    "references": [],
+    "compilerOptions": {
+      "baseUrl": ".",
+      "paths": {
+        "@/*": ["./src/*"]
+      }
+    },
+    "include": [
+      "src/**/*.ts",
+      "src/**/*.tsx",
+      "src/**/*.js",
+      "src/**/*.jsx",
+      "src/**/*.vue",
+      "src/**/*.json"
+    ],
+    "exclude": [
+      "node_modules",
+      "dist",
+      "build",
+      "coverage",
+      "**/*.spec.ts",
+      "**/*.test.ts"
+    ]
+    
+  }
+  
