@@ -1,4 +1,3 @@
-import {motion} from 'motion/react'
 import { MdArrowOutward as Arrow, MdTurnLeft } from "react-icons/md";
 import { NavLink, useParams } from "react-router-dom"
 import { formationsDiplomants } from "@/data/index"
@@ -43,8 +42,8 @@ const Formation = () => {
                 <h1 className="flex sticky top-[0rem]  items-center text-xl mt-4 mb-2 gap-2 border-l-4 border-red-600 rounded-sm px-1">Unités :</h1>
                 <div className="sticky top-[5rem] flex flex-col gap-y-2  rounded-md  outline-1 px-2 py-4  ">
                     {unites.map((unit, index) => {
-                        return <motion.p 
-                        key={index} className={`text-shadow-md py-1 unit_text`  }>- {unit}</motion.p>
+                        return <p 
+                        key={index} className={`text-shadow-sm py-1 unit_text`  }>- {unit} .</p>
                     })}
                 </div>
             </div>
@@ -55,13 +54,13 @@ const Formation = () => {
             *:ease-in-out
             
             ">
-                <NavLink className="bg-blue-600 border-1 active:text-red-600 active-scale-110   text-black backdrop-contrast-125" to={`/inscription/${link}`}>
+                <NavLink className="bg-blue-600 border-1 active:text-red-600 active-scale-110   text-neutral-100 backdrop-contrast-125" to={`/inscription/${link}`}>
                     {/* translate later  */}
-                    <button>S'inscrit en ce formation <Arrow/></button>
+                    <button>S’inscrire à ce formation <Arrow/></button>
                 </NavLink>
 
                 <NavLink to={"/formations_diplomantes"} className="outline-1 active:scale-110 active:invert-50">
-                    <button>vior autre formations <MdTurnLeft/></button>
+                    <button>Voir d'autres formations <MdTurnLeft/></button>
                 </NavLink>
             </div>
             <Footer />

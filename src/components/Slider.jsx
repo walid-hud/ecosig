@@ -1,3 +1,4 @@
+import {motion} from 'motion/react'
 import {useRef , useEffect , memo}from 'react'
 const Slider = () => {
     const images = Array.from({length:12}, (_, index)=>`/${index}.jpg`)
@@ -15,12 +16,11 @@ const Slider = () => {
     } ,[])
   return (
     <>
-      <div
+      <motion.div
           ref={slider}
-          className="*:w-full -px-4 *:aspect-auto flex overflow-x-auto *:rounded-xl my-4  
-           
-          backdrop-blur-2xl 
-        ">
+          className="*:w-full -px-4 *:aspect-auto flex overflow-x-auto *:rounded-xl my-4 backdrop-blur-2xl "
+          
+          >
           {images.map((value , index) => (
             <img
               key={index}
@@ -29,7 +29,7 @@ const Slider = () => {
               className={` object-cover ${index > 0 ? "mr-4":""}`}
             />)
           )}
-        </div>
+        </motion.div>
     </>
   )
 }

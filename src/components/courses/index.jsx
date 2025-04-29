@@ -25,7 +25,7 @@ const CoursesElements = formationsDiplomants.map(({ id, title, text, imgLink, li
 const Courses = () => {
   return (
     <div id="formations" className="px-4 mt-[2rem] scroll-mt-[5rem] ">
-      <h1 className="text-3xl  text-left ">Formations diplômantes</h1>
+      <h1 className=" text-2xl   md:text-3xl  text-left  ">Formations diplômantes</h1>
       <hr className="text-transparent mt-1 mb-4 bg-blue-500 h-1 rounded-2xl " />
       {CoursesElements}
 
