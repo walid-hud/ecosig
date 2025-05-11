@@ -15,11 +15,10 @@ const NavBar = () => {
   const handleToggle = () => {
     setIsOpen(!isOpen);
   };
-  // Add a scroll event listener to change the navbar style on scroll
   useEffect(() => {
     const handleScroll = () => {
       const navbar = document.getElementById("navbar");
-      if (window.scrollY > 32){
+      if (window.scrollY > 25){
         navbar.classList.add("backdrop-blur-md", 'border-b-2', 'border-black'); ;
       } else {
         navbar.classList.remove("backdrop-blur-md", 'border-b-2', 'border-black');
@@ -62,7 +61,7 @@ const NavBar = () => {
           <NavLink viewTransition  id="nav-link" to="/activites">
             <h1 className="smooth-underline">Activités</h1>
           </NavLink>
-          <NavLink viewTransition  id="nav-link" to="/a-propos">
+          <NavLink viewTransition  id="nav-link" >
             <h1 className="smooth-underline">À propos</h1>
           </NavLink>
           <a id="nav-link" href="#contact">
@@ -112,7 +111,7 @@ const NavBar = () => {
                 <PiPuzzlePiece className="text-2xl" />
                 <h1 >Activités</h1>
               </NavLink>
-              <NavLink viewTransition  id="nav-link" to="/a-propos" onClick={()=>handleToggle()}>
+              <NavLink viewTransition to="/about"  id="nav-link"  onClick={()=>handleToggle()}>
                 <PiInfo className="text-2xl mt-[2px]" />
                 <h1 >À propos</h1>
               </NavLink>

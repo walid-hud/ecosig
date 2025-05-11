@@ -1,8 +1,8 @@
-import Courses from "@/components/courses"
-import Footer from "@/components/Footer"
+import React from "react"
 import Hero from "@/components/hero"
-import Quote from "@/components/Quote"
-import Transition from "@/components/Transition"
+const Courses = React.lazy(() => import("@/components/courses"))
+const Footer = React.lazy(() => import("@/components/footer"))
+const Quote = React.lazy(() => import("@/components/quote"))
 import { ScrollToTop   } from "@/components/utils"
 
 const Home = () => {

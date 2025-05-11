@@ -9,6 +9,7 @@ import Formations from './pages/Formations'
 import Formation from './components/Formation'
 import Activites from '@/components/Activites'
 import { AnimatePresence } from 'framer-motion'
+import About from './pages/About'
 // import { StrictMode } from 'react'
 createRoot(document.getElementById('root')).render(
     // <StrictMode>
@@ -22,6 +23,8 @@ createRoot(document.getElementById('root')).render(
                 <Route path='/formations_diplomantes' element={<Formations />} />
                 <Route path='/formations_diplomantes/:course' element={<Formation />} />
                 <Route path='/activites' element={<Activites />} />
+                <Route path='/about' element={<About />} />
+
                 </Route>
             </Routes>
             </AnimatePresence>

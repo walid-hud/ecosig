@@ -40,10 +40,10 @@ const Formation = () => {
                     <p className="flex items-center text-xl mt-4 mb-2 gap-2 border-l-4 border-red-600 rounded-sm px-1 "><PiTimer className="text-xl" />Durée : {duration}</p>
                 </div>
                 <h1 className="flex sticky top-[0rem]  items-center text-xl mt-4 mb-2 gap-2 border-l-4 border-red-600 rounded-sm px-1">Unités :</h1>
-                <div className="sticky top-[5rem] flex flex-col gap-y-2  rounded-md  outline-1 px-2 py-4  ">
+                <div className="sticky top-[5rem] flex flex-col gap-y-2  rounded-md  outline-1 px-2 py-4 backdrop-blur-lg ">
                     {unites.map((unit, index) => {
                         return <p 
-                        key={index} className={`text-shadow-sm py-1 unit_text`  }>- {unit} .</p>
+                        key={index} className={`text-shadow-sm py-1 unit_text flex`  }><li/> {unit} .</p>
                     })}
                 </div>
             </div>
@@ -54,12 +54,11 @@ const Formation = () => {
             *:ease-in-out
             
             ">
-                <NavLink className="bg-blue-600 border-1 active:text-red-600 active-scale-110   text-neutral-100 backdrop-contrast-125" to={`/inscription/${link}`}>
-                    {/* translate later  */}
+                <NavLink className="bg-blue-600 border-1 border-black active:text-red-600 active-scale-110   text-neutral-100 backdrop-contrast-125" to={`/inscription/${link}`}>
                     <button>S’inscrire à ce formation <Arrow/></button>
                 </NavLink>
 
-                <NavLink to={"/formations_diplomantes"} className="outline-1 active:scale-110 active:invert-50">
+                <NavLink to={"/formations_diplomantes"} className="outline-1 active:scale-110 backdrop-blur-lg">
                     <button>Voir d'autres formations <MdTurnLeft/></button>
                 </NavLink>
             </div>

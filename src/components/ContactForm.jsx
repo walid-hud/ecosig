@@ -1,7 +1,5 @@
-import { useState } from "react";
 import { IoMdSend as Send} from "react-icons/io";
 const ContactForm = () => {
-  const [formData , setFormData]= useState({nom: "", email: "", sujet: "", message: ""});
   return (
     <div>
       <h1 className='text-3xl mb-2 border-l-4 border-blue-600 rounded-sm px-1'>Posez vos questions.</h1>

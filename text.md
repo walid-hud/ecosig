@@ -23,8 +23,8 @@
 
 
 ### Color palette :
-- 1 : #0d1321
-- 2 : #1d2d44
-- 3 : #3e5c76
-- 4 : #748cab
-- 5 : #f0ebd8
+- 1 : <span style="color:#0d1321 ; font-size:1.2rem;">lorem .........</span>
+- 2 : <span style="color:#1d2d44 ; font-size:1.2rem;">lorem .........</span>
+- 3 : <span style="color:#3e5c76 ; font-size:1.2rem;">lorem .........</span>
+- 4 : <span style="color:#748cab ; font-size:1.2rem;">lorem .........</span>
+- 5 : <span style="color:#f0ebd8 ; font-size:1.2rem;">lorem .........</span>

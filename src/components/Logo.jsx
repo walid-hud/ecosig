@@ -8,7 +8,7 @@ const Logo = () => {
                 EC
             </span>
             <FaPowerOff 
-                className="text-[2.2rem] mb-1 text-blue-600 spin-flicker  hover:text-red-600 transition-all duration-500 ease-in-out" 
+                className="text-[2.1rem] mb-1 text-blue-600 spin-flicker  hover:text-red-600 transition-all duration-500 ease-in-out" 
             />
             <span className="  ">SIG</span>
             <img src="./accredite.png" alt="" className="w-6 " />
