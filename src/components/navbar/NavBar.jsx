@@ -8,6 +8,7 @@ import { ButtonMain } from "../buttons/Buttons"
 import Logo from "../Logo"
 import { NavLink } from "react-router-dom"
 import { useEffect, useState } from "react";
+import Button from "../utils/Button";
 
 const NavBar = () => {
 
@@ -52,24 +53,29 @@ const NavBar = () => {
       >
         <Logo />
         <div className="hidden md:flex gap-12 font-['var(--font-serif)'] text-xl  *:hover:text-red-500">
-          <NavLink viewTransition  id="nav-link" to="/">
+          <NavLink   id="nav-link" to="/">
             <h1 className="smooth-underline" id="first">Accueil</h1>
           </NavLink>
           <a id="nav-link" href="/formations_diplomantes">
             <h1 className="smooth-underline">Formations</h1>
           </a>
-          <NavLink viewTransition  id="nav-link" to="/activites">
+          <NavLink   id="nav-link" to="/activites">
             <h1 className="smooth-underline">Activités</h1>
           </NavLink>
-          <NavLink viewTransition  id="nav-link" >
+          <NavLink  to={"/about"} id="nav-link" >
             <h1 className="smooth-underline">À propos</h1>
           </NavLink>
           <a id="nav-link" href="#contact">
             <h1 className="smooth-underline">Contact</h1>
           </a>
         </div>
-        <NavLink viewTransition  to={"inscription"}>  
-        <ButtonMain text={"S'inscrire"} icon={<Arrow className="ml-1 -mr-1" />} />
+        <NavLink   to={"inscription"}>  
+      <button  className="flex md:gap-x-2 text-lg cursor-pointer text-white md:text-xl align-baseline active:scale-90 bg-blue-600 py-1 border-2 border-neutral-700  hover:px-8  md:px-4 px-4  rounded-[2rem] transition-all duration-400 ease-in-out">
+          
+          S'inscrire
+          
+          <Arrow className="text-2xl" />
+        </button>
         </NavLink>
         {!isOpen ? <MenuIcon
           className=" z-50 text-4xl w-fit md:hidden"
@@ -82,7 +88,7 @@ const NavBar = () => {
       </nav>
       <AnimatePresence>
         {isOpen &&
-          <motion.div id="side-bar" className={`md:hidden fixed top-0 left-1/2 mt-[5rem] h-fit bg-gradient-to-t from-transparent via-transparent  to-gray-600 to-[200%]  backdrop-blur-[20px] rounded-lg border-2 z-50 `}
+          <motion.div id="side-bar" className={`md:hidden fixed top-0 left-1/2 mt-[5rem] h-fit bg-gradient-to-t from-transparent via-transparent  to-gray-00 to-[200%]  backdrop-blur-[20px] rounded-lg border-2 z-50 `}
             initial={{
               opacity: 0, scale: 0.75, translateX: "-50%", width: "calc(100vw - 2rem)"
             }}
@@ -91,14 +97,14 @@ const NavBar = () => {
             exit={{ opacity: 0, scale: 0 }}
           >
             <div className="flex flex-col  *:py-4 px-2 font-['var(--font-serif)'] text-xl *:flex *:gap-2 ">
-              <NavLink viewTransition  id="nav-link" to="/" 
+              <NavLink   id="nav-link" to="/" 
                 className={({ isActive }) => (isActive ? "text-blue-600" : "")}
                 onClick={()=>handleToggle()}
               >
                 <MdHome className="text-2xl mt-[2px]" />
                 <h1 id="first">Accueil</h1>
               </NavLink>
-              <NavLink viewTransition  onClick={()=>handleToggle()} id="nav-link" to="/formations_diplomantes"
+              <NavLink   onClick={()=>handleToggle()} id="nav-link" to="/formations_diplomantes"
               className={({ isActive }) => (isActive ? "text-blue-600" : "")}
               
               >
@@ -106,12 +112,19 @@ const NavBar = () => {
                 <h1 >Formations</h1>
               </NavLink>
 
-              <NavLink viewTransition  id="nav-link" to="/activites" onClick={()=>handleToggle()}
+              <NavLink  to="/inscription"  id="nav-link"  onClick={()=>handleToggle()} 
+              className={({ isActive }) => (isActive ? "text-blue-600" : "")}>
+                <Arrow className="text-2xl mt-[2px]" />
+                <h1>Inscription</h1>
+              </NavLink>
+
+              <NavLink   id="nav-link" to="/activites" onClick={()=>handleToggle()}
               className={({ isActive }) => (isActive ? "text-blue-600" : "")}>
                 <PiPuzzlePiece className="text-2xl" />
                 <h1 >Activités</h1>
               </NavLink>
-              <NavLink viewTransition to="/about"  id="nav-link"  onClick={()=>handleToggle()}>
+              <NavLink  to="/about"  id="nav-link"  onClick={()=>handleToggle()} 
+              className={({ isActive }) => (isActive ? "text-blue-600" : "")}>
                 <PiInfo className="text-2xl mt-[2px]" />
                 <h1 >À propos</h1>
               </NavLink>

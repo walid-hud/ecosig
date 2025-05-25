@@ -17,22 +17,14 @@ const Activites = () => {
       <section className="mt-2 px-4">
         <h1 className="text-4xl border-l-5 border-blue-600 rounded-sm px-2 mb-4">Activites</h1>
         <ImageSlider />
-        <p className='text_reveal text-lg  ' style={{ animationRangeStart: "cover calc(100vh - 22rem) ", animationRangeEnd: 'contain calc(100vh - 20rem)' }}>
+        <p className='text_reveal text-lg  ' style={{ animationRangeStart: "cover calc(100vh - 20rem) ", animationRangeEnd:'contain calc(100vh - 20rem)'}}>
           Nous entendons par activités parascolaires toutes les manifestations culturelles et sportives organisées par ECOSIG depuis sa création.
-
           Ces activités ne sont nullement facultatives vue qu'elles contribuent à l'épanouissement et à l'intégration de l'apprenant ainsi qu'au rayonnement culturel riche sur toute la ville.
-
           Le programme d'activité étalé porte sur les thèmes suivants: exposition, projection, soirée, représentation, conférence, journées d'information, remise de diplômes sports, sortie...
-
           L'objectif majeur de telles actions est d'ouvrir l'établissement sur son environnement et de collaborer avec le maximum de partenaires( chambres de commerce, presse régionale, délégation de l'artisanat, délégation des affaires culturelles, académie de l'éducation nationale, facultés( FLSH, FST); offices...
-
           ECOSIG tient avec son environnement des partenariats pour améliorer constamment son image de marque.
-
           La direction de ECOSIG informe son aimable public estudiantin actuel que l'école est un espace d'animation. Dans cet esprit, il y a eu création de deux ateliers pour l'année 1999-2000 : " Ecriture " et "théâtre ".
-          
           A travers ces ateliers, les animateurs se fixent pour objectif:
-
-
         </p>
         <div className=" flex flex-col gap-y-2  rounded-md  outline-1 px-2 py-4 *:text-lg *:py-1 backdrop-blur-lg ">
 

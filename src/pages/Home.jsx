@@ -4,6 +4,7 @@ const Courses = React.lazy(() => import("@/components/courses"))
 const Footer = React.lazy(() => import("@/components/footer"))
 const Quote = React.lazy(() => import("@/components/quote"))
 import { ScrollToTop   } from "@/components/utils"
+import About from "./About"
 
 const Home = () => {
   ScrollToTop()
@@ -11,7 +12,7 @@ const Home = () => {
     <>
       <Hero />
       <Courses />
-      <Quote/>
+      <About/>
       <Footer/>
     </>
   )

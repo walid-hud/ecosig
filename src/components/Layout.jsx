@@ -9,6 +9,7 @@ const Layout = () => {
   return (
     <>
       <BG />
+      <div className="scroll-indicator"></div>
       <NavBar />
       <Outlet />
     </>

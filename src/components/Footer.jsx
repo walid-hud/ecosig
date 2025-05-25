@@ -10,7 +10,7 @@ const Footer = () => {
     <footer
       role="contentinfo"
       id="contact"
-      className="backdrop-blur-3xl relative px-4 py-4 mt-4 bg-gradient-to-br from-transparent to-slate-900/50 scroll-mt-[3.2rem] border-t-2 rounded-t-2xl"
+      className="backdrop-blur-3xl relative px-4 py-4 mt-4 scroll-mt-[3.2rem] border-t-2 border-r-2 border-l-2 rounded-t-xl border-neutral-900"
     >
       <h1 className="text-3xl mb-2 border-l-4 border-blue-600 rounded-sm px-1">Contact</h1>
       <div className="flex flex-col py-4 gap-y-4 text-xl *:flex *:gap-x-1">
