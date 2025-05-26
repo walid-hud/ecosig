@@ -8,12 +8,12 @@ const Footer = () => {
 
   return (
     <footer
-      role="contentinfo"
+      role="footer"
       id="contact"
       className="backdrop-blur-3xl relative px-4 py-4 mt-4 scroll-mt-[3.2rem] border-t-2 border-r-2 border-l-2 rounded-t-xl border-neutral-900"
     >
       <h1 className="text-3xl mb-2 border-l-4 border-blue-600 rounded-sm px-1">Contact</h1>
-      <div className="flex flex-col py-4 gap-y-4 text-xl *:flex *:gap-x-1">
+      <div className="flex flex-col py-4 gap-y-4 text-xl *:flex *:gap-x-1 *:items-center">
         <p>
           <Email className="text-2xl" /> ecole.ecosig@menara.ma
         </p>
@@ -30,26 +30,31 @@ const Footer = () => {
           Suivez-nous <Arrow />
         </a>
       </div>
-      <ContactForm />
-      <div className="flex flex-col">
-        <h1 className="text-3xl mb-2 border-l-4 border-blue-600 rounded-sm px-1">Visitez-nous</h1>
-        <span className="mt-4 mb-6 text-xl">
-          <Pin className="inline mb-1" /> 36, Bd IBN Khaldoun 1er & 2ème étage | Béni-Mellal - Maroc
-        </span>
-        <iframe
-          className="w-full aspect-video rounded-2xl mb-4"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.3532579365424!2d-6.368755124934961!3d32.335424706423495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda387ab3750bd09%3A0xb74589237940fad2!2sECOSIG!5e1!3m2!1sen!2sma!4v1744517757850!5m2!1sen!2sma"
-          allowFullScreen
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          title="ECOSIG Location"
-        ></iframe>
-        <img
-        loading="lazy"
-          src="/school.jpg"
-          alt="ECOSIG location"
-          className="aspect-video rounded-2xl object-center object-cover"
-        />
+
+      <div className="md:grid md:grid-cols-2 md:grid-rows-1 md:grid-flow-col md:gap-x-4  ">
+        <ContactForm />
+        <div className="flex flex-col">
+          <h1 className="text-3xl mb-2 border-l-4 border-blue-600 rounded-sm px-1">Visitez-nous</h1>
+          <span className="mt-4 mb-6 text-xl">
+            <Pin className="inline mb-1" /> 36, Bd IBN Khaldoun 1er & 2ème étage | Béni-Mellal - Maroc
+          </span>
+          <div className="md:flex  md:h-full md:gap-x-4">
+            <iframe
+              className="w-full aspect-video rounded-2xl mb-4 md:aspect-auto md:h-full md:w-1/2 "
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.3532579365424!2d-6.368755124934961!3d32.335424706423495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda387ab3750bd09%3A0xb74589237940fad2!2sECOSIG!5e1!3m2!1sen!2sma!4v1744517757850!5m2!1sen!2sma"
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="ECOSIG Location"
+            ></iframe>
+            <img
+              loading="lazy"
+              src="/school.jpg"
+              alt="ECOSIG location"
+              className="aspect-video rounded-2xl object-center object-cover md:h-full md:w-1/2 "
+            />
+          </div>
+        </div>
       </div>
       <div className="text-sm text-gray-800 w-full text-center mt-4">
         ECOSIG&reg; {year}. Tous droits réservés.

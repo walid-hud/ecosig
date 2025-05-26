@@ -6,7 +6,7 @@ const BreadCrumb = ({ links, styles }) => {
             {links.map((link, index) => (
                 <span key={index}>
                     <NavLink 
-                    className={(index == links.length -1 ? "text-blue-600 " : 'text-neutral-600') + "capitalize text-lg "} to={index === links.length - 1 ? "" : link.path } 
+                    className={(index == links.length -1 ? "text-blue-600 " : 'text-neutral-600') + "capitalize text-lg md:text-xl "} to={index === links.length - 1 ? "" : link.path } 
                     >
                         {link.label}</NavLink>
                     {index < links.length - 1 && <span className='font-black text-lg capitalize'> / </span>}

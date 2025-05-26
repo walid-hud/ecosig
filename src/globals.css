@@ -317,20 +317,20 @@ body {
   margin: 0 4px;
 }
 
-.scroll-indicator {
+.scroll-indicator{
   position: fixed;
   top: calc(4rem - 2px);
-  right: 0;
-  width: calc(1rem /2);
+  left: 0;
+  width: 0.3rem;
   border-radius: 0 0 2px 2px;
   z-index: 9999;
   background-color: var(--color-blue-600);
   animation: scroll-indicate ease-in-out forwards;
   animation-timeline: scroll();
-/* 
-  background: linear-gradient(0deg, rgba(0, 64, 255, 1), rgba(255, 255, 255, 0.35) 100%);
-  -webkit-background: linear-gradient(0deg, rgba(0, 64, 255, 1), rgba(255, 255, 255, 0.35));
-  -moz-background: linear-gradient(0deg, rgba(0, 64, 255, 1), rgba(255, 255, 255, 0.35)); */
+
+  background: linear-gradient(0deg, #0040ff, rgba(255, 255, 255, 0.35) 100%);
+  -webkit-background: linear-gradient(0deg, rgba(0, 64, 255, 1), rgba(255, 255, 255, 0.35) 100%);
+  -moz-background:    linear-gradient(0deg, rgba(0, 64, 255, 1), rgba(255, 255, 255, 0.35) 100%);
 }
 
 @keyframes scroll-indicate {
