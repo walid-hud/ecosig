@@ -6,7 +6,7 @@ import Button from "../utils/Button";
 
 const Hero = () => {
     return (
-        <section id="hero-section" className="pt-16 ">
+        <section id="hero-section" className="pt-24 ">
             <h1 className="text-4xl px-4" style={{ textWrap:"balance"}}>
                 <p className=" lg:text-6xl">Préparez-vous à l’emploi avec notre formation autorisée et accréditée par l’État
                     <img src="./accredite.png" alt="Accreditation" className="w-10 md:w-12 inline mx-2" />
@@ -22,7 +22,7 @@ const Hero = () => {
                     </NavLink>
                     , pour en faire des acteurs dynamiques de l’économie.
                 </span>
-                <div className="flex mt-4 gap-x-2 text-xl pb-2 md:**:text-2xl lg:**:text-3xl md:gap-x-6   " style={{ fontFamily: "var(--font-serif)", textWrap: "balance" }}>
+                <div className="flex mt-4 gap-x-2 text-xl pb-2 md:**:text-2xl lg:**:text-3xl md:gap-x-6 *:active:scale-90 *:transition-transform *:duration-300 *:ease-in-out  " style={{ fontFamily: "var(--font-sans)"}}>
                     <NavLink to="/inscription" className={"*:bg-blue-600"}>
                         <Button  text={"S'inscrire"}  icon={<Arrow className="text-2xl" />}>
                         </Button>

@@ -1,5 +1,4 @@
 import { useRef, useEffect, memo, useState } from 'react'
-import { FadeLoader } from 'react-spinners'
 const Slider = () => {
   const [loading, setLoading] = useState(true)
   const images = Array.from({ length: 13 }, (_, index) => `/${index}.jpg`)
@@ -19,29 +18,25 @@ const Slider = () => {
     <>
       <div
         ref={slider}
-        className="*:w-full -px-4 flex overflow-x-auto *:rounded-xl rounded-xl my-4 backdrop-blur-2xl scrollbar-hide"
+        className={`*:w-full h-fit text-blue-600 border-2 hidden  md:w-screen 
+        md:gap-2 *:rounded-xl md:*:rounded-sm rounded-xl my-4 backdrop-blur-2xl md:backdrop-blur-none gap-2`}
         style={{
-          scrollbarWidth: 'none', 
-          msOverflowStyle: 'none', 
+          scrollbarWidth: 'none',
+          msOverflowStyle: 'none',
         }}
       >
-        {images.map((value, index) => (
-          <>
-            <img
-              onLoad={() => setLoading(false)}
-              key={index}
-              src={value}
-              alt=""
-              className={`object-cover aspect-video ${index > 0 ? "mr-4" : ""}`}
-              onError={(e)=>{e.target.style.display = "none"}}
-            />
-            {loading && (
-              <div  className="flex justify-center items-center aspect-video">
-                <FadeLoader loading={loading} color="var(--color-blue-600)" radius={"10px"} />
-              </div>
-            )}
-          </>
-        ))}
+        <img loading="lazy" src="/1.jpg" alt="" className="inline " onError={e => { e.target.style.display = "none" }} />
+        <img loading="lazy" src="/8.jpg" alt="" className="inline -auto " onError={e => { e.target.style.display = "none" }} />
+        <img loading="lazy" src="/2.jpg" alt="" className="inline -auto" onError={e => { e.target.style.display = "none" }} />
+        <img loading="lazy" src="/3.jpg" alt="" className="inline -auto" onError={e => { e.target.style.display = "none" }} />
+        <img loading="lazy" src="/4.jpg" alt="" className="inline -auto" onError={e => { e.target.style.display = "none" }} />
+        <img loading="lazy" src="/5.jpg" alt="" className="inline -auto" onError={e => { e.target.style.display = "none" }} />
+        <img loading="lazy" src="/6.jpg" alt="" className="inline -auto" onError={e => { e.target.style.display = "none" }} />
+        <img loading="lazy" src="/7.jpg" alt="" className="inline -auto" onError={e => { e.target.style.display = "none" }} />
+        
+        <img loading="lazy" src="/9.jpg" alt="" className="inline -auto" onError={e => { e.target.style.display = "none" }} />
+        <img loading="lazy" src="/10.jpg" alt="" className="inline -auto" onError={e => { e.target.style.display = "none" }} />
+        <img loading="lazy" src="/11.jpg" alt="" className="inline -auto" onError={e => { e.target.style.display = "none" }} />
       </div>
     </>
   )

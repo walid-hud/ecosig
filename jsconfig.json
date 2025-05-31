@@ -14,14 +14,13 @@
       "src/**/*.vue",
       "src/**/*.json"
     ],
-    "exclude": [
-      "node_modules",
-      "dist",
-      "build",
-      "coverage",
-      "**/*.spec.ts",
-      "**/*.test.ts"
-    ]
-    
+      "exclude": [
+        "node_modules",
+        "dist",
+        "build",
+        "coverage",
+        "**/*.spec.ts",
+        "**/*.test.ts"
+      ]
   }
   

@@ -12,7 +12,7 @@ const Footer = () => {
       id="contact"
       className="backdrop-blur-3xl relative px-4 py-4 mt-4 scroll-mt-[3.2rem] border-t-2 border-r-2 border-l-2 rounded-t-xl border-neutral-900"
     >
-      <h1 className="text-3xl mb-2 border-l-4 border-blue-600 rounded-sm px-1">Contact</h1>
+      <h1 className="text-3xl md:text-5xl mb-2 border-l-4 md:border-l-6 border-blue-600 rounded-sm md:rounded-md px-2">Contact</h1>
       <div className="flex flex-col py-4 gap-y-4 text-xl *:flex *:gap-x-1 *:items-center">
         <p>
           <Email className="text-2xl" /> ecole.ecosig@menara.ma
@@ -34,7 +34,7 @@ const Footer = () => {
       <div className="md:grid md:grid-cols-2 md:grid-rows-1 md:grid-flow-col md:gap-x-4  ">
         <ContactForm />
         <div className="flex flex-col">
-          <h1 className="text-3xl mb-2 border-l-4 border-blue-600 rounded-sm px-1">Visitez-nous</h1>
+          <h1 className="text-3xl md:text-5xl mb-2 border-l-4 md:border-l-6 border-blue-600 md:rounded-md rounded-sm px-2">Visitez-nous</h1>
           <span className="mt-4 mb-6 text-xl">
             <Pin className="inline mb-1" /> 36, Bd IBN Khaldoun 1er & 2ème étage | Béni-Mellal - Maroc
           </span>

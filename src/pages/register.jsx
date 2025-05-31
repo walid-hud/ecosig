@@ -6,6 +6,7 @@ import BreadCrumb from "@/components/BreadCrumb"
 import { NavLink, useParams } from "react-router-dom"
 import { ScrollToTop, } from "@/components/utils";
 import FormSendUI from "@/components/FormSendUI";
+import ImageLoader from "@/components/utils/Imgloader";
 
 
 const Register = () => {
@@ -22,8 +23,9 @@ const Register = () => {
   const BreadCrumblinks = [
     { path: "/", label: "accuil" },
     { path: "/inscription", label: "inscription" },
-    { path: ChoosenCourse, label: ChoosenCourse }
-  ];
+    ];
+    
+  if(ChoosenCourse)BreadCrumblinks.push({ path: ChoosenCourse, label: ChoosenCourse })
 
   const firstName = useRef(null)
   const lastName = useRef(null)
@@ -42,7 +44,7 @@ const Register = () => {
     level: { label: "Niveau d'études", placeholder: "EX: Bac", required: true, ref: level },
     address: { label: "Address", placeholder: "Address (optional)", required: false, ref: address }
   };
-  
+
   const handlSubmit = async (e) => {
     e.preventDefault();
     let formData = new FormData();
@@ -60,55 +62,59 @@ const Register = () => {
     <>
       <section role="inscription" className="h-screen mt-[4rem]">
         <BreadCrumb styles="top-[4.5rem]" links={BreadCrumblinks} />
-        <main className="mt-2 px-4">
-          <h1 className="text-4xl border-l-5 border-blue-600 rounded-sm px-2 mb-4">Inscription</h1>
-          <form className="flex flex-col gap-y-2" onSubmit={(e)=>handlSubmit(e)}>
-            {Object.entries(fieldMeta).map(([field, meta], index) => (
-              <div key={index} className="flex flex-col gap-y-2">
-                <label
-                  htmlFor={field}
-                  className="text-sm mb-[-10px] px-2 w-fit backdrop-opacity-0"
-                >
-                  {meta.label}
-                  {meta.required && <span className="text-red-600">*</span>}
+        <main className="mt-2 px-4 ">
+          <h1 className="text-4xl border-l-5 md:text-5xl md:border-l-6 border-blue-600 rounded-sm px-2 mb-4">Inscription</h1>
+          <div className="md:flex ">
+            <form className="flex flex-col gap-y-2 md:w-1/3 " onSubmit={(e) => handlSubmit(e)}>
+              {Object.entries(fieldMeta).map(([field, meta], index) => (
+                <div key={index} className="flex flex-col gap-y-2">
+                  <label
+                    htmlFor={field}
+                    className="text-sm mb-[-10px] px-2 w-fit backdrop-opacity-0"
+                  >
+                    {meta.label}
+                    {meta.required && <span className="text-red-600">*</span>}
+                  </label>
+                  <input
+                    ref={meta.ref}
+                    type={meta.type || "text"}
+                    required={meta.required}
+                    inputMode={meta.type}
+                    name={field}
+                    placeholder={meta.placeholder}
+                    id={field}
+                    className="outline-1 focus:outline-sky-600 rounded-md p-3"
+                    aria-label={field}
+                  />
+                </div>
+              ))}
+              <div className="flex flex-col gap-y-2">
+                <label htmlFor="course" className="text-sm mb-[-10px] px-2 w-fit backdrop-opacity-0">
+                  Filière<span className="text-red-600">*</span>
                 </label>
-                <input
-                  ref={meta.ref}
-                  type={meta.type || "text"}
-                  required={meta.required}
-                  name={field}
-                  placeholder={meta.placeholder}
-                  id={field}
-                  className="outline-1 focus:outline-sky-600 rounded-md p-3"
-                  aria-label={field}
-                />
+                <select
+                  ref={course}
+                  name="course"
+                  id="course"
+                  className="outline-1 rounded-md p-3 mb-4 focus:outline-sky-600 backdrop-blur-md"
+                  aria-label="Filière"
+                >
+                  {coursesOptions.map((course, index) => (
+                    <option key={index} value={course.value}>
+                      {course.value}
+                    </option>
+                  ))}
+                </select>
               </div>
-            ))}
-            <div className="flex flex-col gap-y-2">
-              <label htmlFor="course" className="text-sm mb-[-10px] px-2 w-fit backdrop-opacity-0">
-                Filière<span className="text-red-600">*</span>
-              </label>
-              <select
-                ref={course}
-                name="course"
-                id="course"
-                className="outline-1 rounded-md p-3 mb-4 focus:outline-sky-600 backdrop-blur-md"
-                aria-label="Filière"
+              <button
+                type="submit"
+                className="outline-1 outline-black bg-blue-500 active:scale-90 active:animate-bounce focus:outline-red-600 text-xl text-white flex items-center justify-center gap-4 py-2 px-4 rounded-md mb-10 hover:bg-blue-700 transition duration-300"
               >
-                {coursesOptions.map((course, index) => (
-                  <option key={index} value={course.value}>
-                    {course.value}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <button
-              type="submit"
-              className="outline-1 outline-black bg-blue-500 active:scale-90 active:animate-bounce focus:outline-red-600 text-xl text-white flex items-center justify-center gap-4 py-2 px-4 rounded-md mb-10 hover:bg-blue-700 transition duration-300"
-            >
-              Envoyer <Send />
-            </button>
-          </form>
+                Envoyer <Send />
+              </button>
+            </form>
+            <ImageLoader  styleClasses={"w-2/3 px-4 hidden md:block  mb-[3.5rem] "}  title={"form illustration"} imgSrc={"/adventure.svg"} />
+          </div>
         </main>
         {/* <FormSendUI loading={true} Visible={true}/> */}
         <Footer />
