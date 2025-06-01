@@ -3,55 +3,53 @@ import { motion } from "framer-motion";
 
 const TypingEffect = ({ text, speed = 100 }) => {
     const [displayedText, setDisplayedText] = useState("");
-    const [startTyping, setStartTyping] = useState(false);
+    const [hasTyped, setHasTyped] = useState(false);
     const ref = useRef(null);
 
-    // Use a single observer instance and clean up properly
+    // Intersection Observer to trigger typing
     useEffect(() => {
-        if (!ref.current) return;
+        const node = ref.current;
+        if (!node) return;
         const observer = new window.IntersectionObserver(
             ([entry]) => {
                 if (entry.isIntersecting) {
-                    setStartTyping(true);
+                    setHasTyped(true);
                     observer.disconnect();
                 }
             },
             { threshold: 0.1 }
         );
-        observer.observe(ref.current);
+        observer.observe(node);
         return () => observer.disconnect();
     }, []);
 
-    // Optimize typing effect by using a single interval and cleanup
+    // Typing effect
     useEffect(() => {
-        if (!startTyping) return;
-        setDisplayedText(""); // Reset before typing
+        if (!hasTyped) return;
+        setDisplayedText("");
         let index = 0;
-        let cancelled = false;
+        let timeoutId;
 
         const type = () => {
-            if (cancelled) return;
             setDisplayedText(text.slice(0, index + 1));
             if (index < text.length - 1) {
                 index++;
-                setTimeout(type, speed);
+                timeoutId = setTimeout(type, speed);
             }
         };
 
         type();
 
-        return () => {
-            cancelled = true;
-        };
-    }, [text, speed, startTyping]);
+        return () => clearTimeout(timeoutId);
+    }, [text, speed, hasTyped]);
 
     return (
         <motion.div
             ref={ref}
-            initial={{ opacity: 0, transition:"all ease-in .3s" }}
+            initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            className="text-pretty tracking-wider h-[28rem]  md:h-fit text-neutral-900 md:text-neutral-200"
+            transition={{ duration: 0.5, ease: "easeIn" }}
+            className="text-pretty tracking-wider h-[30rem] md:h-auto  text-neutral-900  md:text-neutral-300"
         >
             <blockquote>{displayedText}</blockquote>
         </motion.div>

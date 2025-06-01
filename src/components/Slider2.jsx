@@ -27,14 +27,7 @@ const Slider2 = () => {
 
     return (
         <div
-            style={{
-                position: "sticky",
-                top: "4rem",
-                zIndex: 10,
-                // Only sticky on mobile (max-width: 768px)
-                position: window.innerWidth <= 480 ? "sticky" : "static"
-            }}
-            className="md:static md:top-auto"
+            className="md:top-auto"
         >
             <Marquee
                 pauseOnHover={true}

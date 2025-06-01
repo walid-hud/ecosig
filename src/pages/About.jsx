@@ -14,78 +14,52 @@ const BreadCrumblinks = [
 const Objectifs = () => {
   return (
     <>
-      <h1 className='text-2xl my-4  hr-text font-semibold md:text-4xl'>
+      <h1 className='text-2xl my-4 hr-text font-semibold md:text-4xl'>
         Objéctifs pédagogiques
       </h1>
-      <div className='lg:grid grid-cols-3 gap-x-[2rem] gap-y-[1rem] lg:mb-12 
-      
-     
-      ' id='objectives'>
-        <div
-          id='card'
-          className=' hover:scale-[1.025] hover:bg-neutral-300 hover:border-2 hover:border-blue-600 transition-all duration-300 ease-in-out my-2 flex flex-col border-1 border-neutral-800 rounded-lg h-[22rem] overflow-hidden backdrop-blur-lg lg:h-[24rem]'
-        >
-          <img src="https://plus.unsplash.com/premium_photo-1661301084402-1a0452b5850e?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" className='aspect-video object-cover brightness-[70%] ' />
-          <p className=' text-xl px-2 py-2 text-shadow-md'>
-            Former des cadres capables de créer et de gèrer des entreprises prospères.
-          </p>
-        </div>
-        <div
-          id='card'
-          className=' hover:scale-[1.025] hover:bg-neutral-300 hover:border-2 hover:border-blue-600 transition-all duration-300 ease-in-out my-2 flex flex-col border-1 border-neutral-800 rounded-lg h-[22rem] overflow-hidden backdrop-blur-lg lg:h-[24rem]'
-        >
-          <img src="https://images.pexels.com/photos/1181676/pexels-photo-1181676.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" className='aspect-video object-cover brightness-[70%] ' />
-          <p className=' text-xl px-2 py-2 text-shadow-md'>
-            Former des techniciens spécialisés capables de concevoir, créer et administrer des applications informatiques à caractère de gestion.
-          </p>
-        </div>
-        <div
-          id='card'
-          className=' hover:scale-[1.025] hover:bg-neutral-300 hover:border-2 hover:border-blue-600 transition-all duration-300 ease-in-out my-2 flex flex-col border-1 border-neutral-800 rounded-lg h-[22rem] overflow-hidden backdrop-blur-lg lg:h-[24rem]'
-        >
-          <img src="https://images.pexels.com/photos/442151/pexels-photo-442151.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" className='aspect-video object-cover brightness-[70%] ' />
-          <p className=' text-xl px-2 py-2 text-shadow-md'>
-            Former des techniciens spécialisés capables de maintenir et de gérer un parc informatique.
-          </p>
-        </div>
-        <div
-          id='card'
-          className='md:hidden  hover:scale-[1.025] transition-all duration-300 ease-in-out my-2 flex flex-col border-1 border-neutral-800 rounded-lg h-[22rem] overflow-hidden backdrop-blur-lg lg:h-[24rem]'
-        >
-          <img src="https://images.pexels.com/photos/6803527/pexels-photo-6803527.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" className='aspect-video object-cover brightness-[70%] ' />
-          <p className=' text-xl px-2 py-2 text-shadow-md'>
-            Former des techniciens spécialisés capables d’assister le responsable d’un département de gestion (finance, juridique, marketing, production…).
-          </p>
-        </div>
-        <div
-          id='card'
-          className='md:hidden  hover:scale-[1.025] transition-all duration-300 ease-in-out my-2 flex flex-col border-1 border-neutral-800 rounded-lg h-[22rem] overflow-hidden backdrop-blur-lg lg:h-[24rem]'
-        >
-          <img src="https://images.pexels.com/photos/4872028/pexels-photo-4872028.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="" className='aspect-video object-cover brightness-[70%] ' />
-          <p className=' text-xl px-2 py-2 text-shadow-md'>
-            Participer à la formation continue et à l’amélioration des compétences des salariés en activité professionnelle.
-          </p>
-        </div>
-
-        <div className=' hidden md:flex col-span-3  *:w-1/3 justify-center gap-x-[2rem] hover:scale-100 transition-none hover:border-none  '>
+      <div
+        className='md:grid grid-cols-3 gap-x-[2rem] gap-y-[1rem] md:mb-12'
+        id='objectives'
+      >
+        {goalsData.map((goal, idx) => (
           <div
+            key={idx}
             id='card'
-            className='hover:scale-[1.025] hover:bg-neutral-300 hover:border-2 hover:border-blue-600 transition-all duration-300 ease-in-out my-2 flex flex-col border-2 border-neutral-800 rounded-lg h-[22rem] overflow-hidden backdrop-blur-lg lg:h-[24rem]'
+            className={`hover:scale-[1.025] hover:bg-neutral-300 hover:border-2 hover:border-blue-600 transition-all duration-300 ease-in-out my-2 flex flex-col border-1 border-neutral-800 rounded-lg overflow-hidden backdrop-blur-lg
+              ${idx > 2 ? 'md:hidden' : ''}
+              ${idx === 3 || idx === 4 ? 'md:hidden' : ''}
+              ${idx < 3 ? 'h-[22rem] lg:h-[24rem] md:h-auto' : 'h-[22rem] lg:h-[24rem] md:h-auto'}
+            `}
+            style={{ height: 'auto' }}
           >
-            <img src="https://images.pexels.com/photos/6803527/pexels-photo-6803527.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" className='aspect-video object-cover brightness-[70%] ' />
-            <p className=' text-xl px-2 py-2 text-shadow-md'>
-              Former des techniciens spécialisés capables d’assister le responsable d’un département de gestion (finance, juridique, marketing, production…).
+            <img
+              src={goal.imgUrl}
+              alt=""
+              className='aspect-video object-cover brightness-[70%]'
+            />
+            <p className='text-xl px-2 py-2 text-shadow-md'>
+              {goal.text}
             </p>
           </div>
-          <div
-            id='card'
-            className=' hover:scale-[1.025] hover:bg-neutral-300 hover:border-2 hover:border-blue-600 transition-all duration-300 ease-in-out my-2 flex flex-col border-1 border-neutral-800 rounded-lg h-[22rem] overflow-hidden backdrop-blur-lg lg:h-[24rem]'
-          >
-            <img src="https://images.pexels.com/photos/4872028/pexels-photo-4872028.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="" className='aspect-video object-cover brightness-[70%] ' />
-            <p className=' text-xl px-2 py-2 text-shadow-md'>
-              Participer à la formation continue et à l’amélioration des compétences des salariés en activité professionnelle.
-            </p>
-          </div>
+        ))}
+        <div className='hidden md:flex col-span-3 *:w-1/3 justify-center gap-x-[2rem]'>
+          {[3, 4].map(idx => (
+            <div
+              key={idx}
+              id='card'
+              className='hover:scale-[1.025] hover:bg-neutral-300 hover:border-2 hover:border-blue-600 transition-all duration-300 ease-in-out my-2 flex flex-col border-1 border-neutral-800 rounded-lg overflow-hidden backdrop-blur-lg md:h-auto'
+              style={{ height: 'auto' }}
+            >
+              <img
+                src={goalsData[idx].imgUrl}
+                alt=""
+                className='aspect-video object-cover brightness-[70%]'
+              />
+              <p className='text-xl px-2 py-2 text-shadow-md'>
+                {goalsData[idx].text}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </>
