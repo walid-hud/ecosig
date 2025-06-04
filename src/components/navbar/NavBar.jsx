@@ -52,30 +52,43 @@ const NavBar = () => {
       <nav id="navbar" className="flex justify-between fixed top-0 z-[9999] w-screen items-center px-4 md:flex transition-all duration-300 ease-in-out  "
       >
         <Logo />
-        <div className="hidden md:flex gap-12 font-['var(--font-serif)'] text-xl  *:hover:text-red-500">
-          <NavLink   id="nav-link" to="/">
+        <div className="hidden md:flex gap-12 font-['var(--font-serif)'] text-xl 2xl:text-2xl *:hover:text-red-500">
+          <NavLink
+            id="nav-link"
+            to="/"
+            className={({ isActive }) => isActive ? "text-blue-600" : ""}
+          >
             <h1 className="smooth-underline" id="first">Accueil</h1>
           </NavLink>
-          <a id="nav-link" href="/formations_diplomantes">
+          <NavLink id="nav-link" to="/formations_diplomantes" className={({ isActive }) => isActive ? "text-blue-600" : ""}>
             <h1 className="smooth-underline">Formations</h1>
-          </a>
-          <NavLink   id="nav-link" to="/activites">
+          </NavLink>
+          <NavLink
+            id="nav-link"
+            to="/activites"
+            className={({ isActive }) => isActive ? "text-blue-600" : ""}
+          >
             <h1 className="smooth-underline">Activités</h1>
           </NavLink>
-          <NavLink  to={"/about"} id="nav-link" >
+          <NavLink
+            to={"/about"}
+            id="nav-link"
+            className={({ isActive }) => isActive ? "text-blue-600" : ""}
+          >
             <h1 className="smooth-underline">À propos</h1>
           </NavLink>
           <a id="nav-link" href="#contact">
             <h1 className="smooth-underline">Contact</h1>
           </a>
         </div>
-        <NavLink   to={"inscription"}>  
-      <button  className="flex md:gap-x-2 text-lg cursor-pointer text-white md:text-xl align-baseline active:scale-90 bg-blue-600 py-1 border-2 border-neutral-700  hover:px-8  md:px-4 px-4  rounded-[2rem] transition-all duration-400 ease-in-out">
-          
-          S'inscrire
-          
-          <Arrow className="text-2xl" />
-        </button>
+        <NavLink
+          to={"préinscription"}
+          className={({ isActive }) => isActive ? "text-blue-600" : ""}
+        >
+          <button className="flex md:gap-x-2 text-lg cursor-pointer text-white md:text-xl align-baseline active:scale-90 bg-blue-600 py-1 border-2 border-neutral-700  hover:px-8  md:px-4 px-4  rounded-[2rem] transition-all duration-400 ease-in-out">
+            S'inscrire
+            <Arrow className="text-2xl" />
+          </button>
         </NavLink>
         {!isOpen ? <MenuIcon
           className=" z-50 text-4xl w-fit md:hidden"
@@ -97,38 +110,54 @@ const NavBar = () => {
             exit={{ opacity: 0, scale: 0 }}
           >
             <div className="flex flex-col  *:py-4 px-2 font-['var(--font-serif)'] text-xl *:flex *:gap-2 ">
-              <NavLink   id="nav-link" to="/" 
-                className={({ isActive }) => (isActive ? "text-blue-600" : "")}
-                onClick={()=>handleToggle()}
+              <NavLink
+                id="nav-link"
+                to="/"
+                className={({ isActive }) => isActive ? "text-blue-600" : ""}
+                onClick={() => handleToggle()}
               >
                 <MdHome className="text-2xl mt-[2px]" />
                 <h1 id="first">Accueil</h1>
               </NavLink>
-              <NavLink   onClick={()=>handleToggle()} id="nav-link" to="/formations_diplomantes"
-              className={({ isActive }) => (isActive ? "text-blue-600" : "")}
-              
+              <NavLink
+                onClick={() => handleToggle()}
+                id="nav-link"
+                to="/formations_diplomantes"
+                className={({ isActive }) => isActive ? "text-blue-600" : ""}
               >
                 <PiCertificate className="text-2xl mt-[2px]" />
                 <h1 >Formations</h1>
               </NavLink>
 
-              <NavLink  to="/inscription"  id="nav-link"  onClick={()=>handleToggle()} 
-              className={({ isActive }) => (isActive ? "text-blue-600" : "")}>
+              <NavLink
+                to="/préinscription"
+                id="nav-link"
+                onClick={() => handleToggle()}
+                className={({ isActive }) => isActive ? "text-blue-600" : ""}
+              >
                 <Arrow className="text-2xl mt-[2px]" />
-                <h1>Inscription</h1>
+                <h1>préinscription</h1>
               </NavLink>
 
-              <NavLink   id="nav-link" to="/activites" onClick={()=>handleToggle()}
-              className={({ isActive }) => (isActive ? "text-blue-600" : "")}>
+              <NavLink
+                id="nav-link"
+                to="/activites"
+                onClick={() => handleToggle()}
+                className={({ isActive }) => isActive ? "text-blue-600" : ""}
+              >
                 <PiPuzzlePiece className="text-2xl" />
                 <h1 >Activités</h1>
               </NavLink>
-              <NavLink  to="/about"  id="nav-link"  onClick={()=>handleToggle()} 
-              className={({ isActive }) => (isActive ? "text-blue-600" : "")}>
+              <NavLink
+                to="/about"
+                id="nav-link"
+                onClick={() => handleToggle()}
+                className={({ isActive }) => isActive ? "text-blue-600" : ""}
+              >
                 <PiInfo className="text-2xl mt-[2px]" />
                 <h1 >À propos</h1>
               </NavLink>
-              <a id="nav-link" href="#contact" onClick={()=>handleToggle()}>
+              <a id="nav-link" href="#contact" onClick={() => handleToggle()}>
                 <MdAlternateEmail className="text-2xl mt-[2px]" />
                 <h1>Contact</h1>
               </a>

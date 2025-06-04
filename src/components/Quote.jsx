@@ -10,7 +10,7 @@ const Quote = () => {
                 <h1 className="text-3xl my-1 px-2 border-l-6 rounded-md font-medium border-blue-600 md:text-5xl md:border-l-6 ">Une Ecole en Evolution Permanente</h1>
                 <div
                     style={{ fontFamily: "var(--font-serif)"}}
-                    className="text-xl italic md:text-2xl  "
+                    className="text-xl italic md:text-3xl  "
                 >
                    <TypingEffect
                        text={`"... Aujourd'hui plus que jamais les organismes économiques se sont rendus compte de l'intérêt du potentiel humain comme facteur essentiel de production. Etant ainsi, le jeune lauréat n'a qu'un seul choix, c'est faire démonstration de ses compétences tant sur le plan technique que moral. Etant conscient de nos responsabilités envers les lauréats que nous formons, nous travaillons en parfaite connaissance des besoins exprimés par le marché de l'emploi..."`}

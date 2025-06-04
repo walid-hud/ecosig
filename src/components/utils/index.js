@@ -35,3 +35,20 @@ export async function Register(formData) {
     }
 
 }
+
+
+
+export async function mockFetchPost(url, data) {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            const ok = Math.random() < 0.5;
+            resolve({
+                ok,
+                status: ok ? 200 : 400,
+                json: async () => ({
+                    message: ok ? "Mock post succeeded" : "Mock post failed"
+                })
+            });
+        }, 2000);
+    });
+}

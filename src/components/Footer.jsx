@@ -1,9 +1,11 @@
 import { MdArrowOutward as Arrow } from "react-icons/md";
-import { PiPhoneLight as Phone, PiMapPin as Pin } from "react-icons/pi";
+import { PiPhoneFill as Phone, PiMapPin as Pin } from "react-icons/pi";
 import { IoMdMail as Email, IoLogoFacebook as FacebookLogo } from "react-icons/io";
 import ContactForm from "./ContactForm";
+import { toast } from "react-toastify";
 
 const Footer = () => {
+  // this year variable is for the footer copyright notice
   const year = new Date().getFullYear();
 
   return (
@@ -13,10 +15,10 @@ const Footer = () => {
       className="backdrop-blur-3xl relative px-4 py-4 mt-4 scroll-mt-[3.2rem] border-t-2 border-r-2 border-l-2 rounded-t-xl border-neutral-900"
     >
       <h1 className="text-3xl md:text-5xl mb-2 border-l-4 md:border-l-6 border-blue-600 rounded-sm md:rounded-md px-2">Contact</h1>
-      <div className="flex flex-col py-4 gap-y-4 text-xl *:flex *:gap-x-1 *:items-center">
-        <p>
+      <div className="flex flex-col py-4 gap-y-4 text-xl *:w-fit *:flex *:gap-x-1 *:items-center">
+        <a href="mailto:ecole.ecosig@menara.ma">
           <Email className="text-2xl" /> ecole.ecosig@menara.ma
-        </p>
+        </a>
         <p>
           <Phone className="text-2xl" /> 05 23 42 39 40
         </p>

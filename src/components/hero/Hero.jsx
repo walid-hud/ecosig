@@ -23,13 +23,13 @@ const Hero = () => {
                     , pour en faire des acteurs dynamiques de l’économie.
                 </span>
                 <div className="flex mt-4 gap-x-2 text-xl pb-2 md:**:text-2xl lg:**:text-3xl md:gap-x-6 *:active:scale-90 *:transition-transform *:duration-300 *:ease-in-out  " style={{ fontFamily: "var(--font-sans)"}}>
-                    <NavLink to="/inscription" className={"*:bg-blue-600"}>
-                        <Button  text={"S'inscrire"}  icon={<Arrow className="text-2xl" />}>
+                    <NavLink to="/préinscription" className={"*:bg-blue-600"}>
+                        <Button  text={"S'inscrire"} styles={"px-4"} icon={<Arrow className="text-2xl" />}>
                         </Button>
                     </NavLink>
 
                     <NavLink to="/formations_diplomantes" className="text-xl">
-                        <Button bg={"neutral"} text={"Formations"}  icon={<PiCertificate className="text-2xl mx-1" />}/>
+                        <Button bg={"neutral"} text={"Formations"} styles={"px-4"} icon={<PiCertificate className="text-2xl mx-1" />}/>
                     </NavLink>
                 </div>
             </h1>

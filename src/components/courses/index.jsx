@@ -2,20 +2,23 @@ import { FaArrowRight as Arrow } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import { formationsDiplomants } from "@/data";
 import ImageLoader from "../utils/Imgloader";
-import { useRef ,useEffect, useState } from "react";
+import { motion } from "framer-motion";
 const Card = ({ title, imgLink, info, link }) => {
 
   
 
 return(
+    <motion.div
+    
+    >
     <NavLink
       to={link}
-      className="block border-1 rounded-2xl px-2 py-4 mb-4 backdrop-blur-3xl md:flex md:flex-col md:justify-between md:transition-all
-      md:hover:scale-[1.025] duration-300 ease-in-out hover:bg-neutral-300 hover:border-blue-600 hover:border-2"
+      className="block outline-1 rounded-2xl px-2 py-4 mb-4 backdrop-blur-3xl md:flex md:flex-col md:justify-between md:transition-all
+      md:hover:scale-[1.025] duration-300 ease-in-out hover:bg-neutral-300 hover:outline-blue-600 hover:outline-2"
 
       title="cliquez pour plus d'infos">
 
-      <h2 className="text-xl lg:text-2xl font-bold"  style={{fontFamily:"var(--font-serif)"}}>{title}</h2>
+      <h2 className="text-xl lg:text-[1.4rem] text-center font-bold"  style={{fontFamily:"var(--font-serif)"}}>{title}</h2>
       <ImageLoader imgSrc={imgLink} title={title}  />
       <p className="lg:text-lg">{info}</p>
       <div  className="flex w-full text-lg mt-4">
@@ -25,6 +28,7 @@ return(
         </button>
       </div>
     </NavLink>
+    </motion.div>
   )
 };
 

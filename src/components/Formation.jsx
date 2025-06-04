@@ -31,13 +31,15 @@ const Formation = () => {
     return (
         <main className="h-screen mt-[4rem]">
             <BreadCrumb links={BreadCrumblinks} />
-            <h1 className="border-l-6 mx-4 my-4  rounded-md  border-blue-600 text-3xl md:mx-4 px-2 font-medium md:text-4xl md:my-4  " style={{ fontFamily: "var(--font-serif)" }}>{title}</h1>
+            <h1 className="text-3xl border-l-6 mx-4 my-4 py-2 border-blue-600 font-medium rounded-md px-2 mb-4 md:text-5xl">{title}</h1>
+
+            {/* <h1 className="border-l-6 mx-4 my-4  rounded-md  border-blue-600 text-3xl md:mx-4 px-2 font-medium md:text-4xl md:my-4  " style={{ fontFamily: "var(--font-serif)" }}>{title}</h1> */}
             <div className=" mt-4 flex flex-col px-4 md:grid md:grid-cols-2  ">
                 <img src={imgLink} alt={`${imgLink}`}
                     className="py-4 md:h-4/5  md:origin-center"
                 />
-
                 <p className="text-xl text-gray-900   md:text-3xl md:pt-24 " >{text}</p>
+
 
                 <div className="md:flex md:flex-col md:col-span-2 md:px-[25%]">
                     <p className="flex items-center text-xl mt-4 mb-2 gap-2 border-l-4 border-red-600 rounded-sm px-1 md:text-3xl "><PiListChecksDuotone className="text-2xl md:text-4xl" />Condition D'admission :</p>
@@ -66,8 +68,9 @@ const Formation = () => {
                     *:hover:bg-neutral-800
                     *:hover:text-blue-600
                     *:hover:border-white
+                    
             ">
-                <NavLink className="bg-blue-600 border-1 border-black  active:text-red-600 active-scale-110   text-neutral-100 backdrop-contrast-125 active:scale-90 " to={`/inscription/${link}`}>
+                <NavLink className="bg-blue-600 border-1 border-black  active:text-red-600 active-scale-110   text-neutral-100 backdrop-contrast-125 active:scale-90 " to={`/préinscription/${link}`}>
                     <button>S’inscrire à ce formation <Arrow /></button>
                 </NavLink>
 

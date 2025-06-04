@@ -294,17 +294,6 @@ body {
   }
 }
 
-#image-bg {
-  background-image: url('banner.jpg');
-  background-size: 200%;
-  background-position: 2rem 20px;
-  background-clip: text;
-  -webkit-background-clip: text;
-  text-stroke: 1px rgba(0, 0, 0, 0.151);
-  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.938);
-
-  color: transparent;
-}
 
 .hr-text {
   display: flex;

@@ -40,7 +40,7 @@ const Activites = () => {
             <p className='unit_text flex md:animate-none'><li /> Former Eventuellement de Futurs animateurs et enfin se préparer aux grands festivals</p>
           </div>
         </div>
-        <p className="mt-2 text-xl md:text-4xl  md:mx-auto md:w-4/5 md:text-center md:mt-[4rem] ">
+        <p className="mt-2 text-xl md:text-4xl  mx-auto md:w-4/5 text-center text-pretty md:mt-[4rem] ">
           Voilà les raisons du montage de cet atelier dans notre école, comme perpective d'avenir, l'école envisage de monter d'autres ateliers (club vidéo, club des internautes de ECOSIG, patrimoine).
         </p>
 
@@ -61,7 +61,7 @@ const Activites = () => {
             md:*:overflow-hidden
             md:mb-[4rem]
             ">
-          <NavLink className="bg-blue-600 border-1 border-black active:text-red-600 active-scale-110   text-neutral-100 backdrop-contrast-125" to={`/inscription`}>
+          <NavLink className="bg-blue-600 border-1 border-black active:text-red-600 active-scale-110   text-neutral-100 backdrop-contrast-125" to={`/préinscription`}>
             <button>Rejoignez-nous <Arrow /> </button>
           </NavLink>
           <NavLink to={"/formations_diplomantes"} className="outline-1 active:scale-110 active:invert-50">
