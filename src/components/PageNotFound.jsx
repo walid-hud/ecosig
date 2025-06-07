@@ -6,7 +6,7 @@ const PageNotFound = () => {
     return (
         <div className="min-h-screen flex flex-col items-center justify-center  text-neutral-800 px-4">
             <img
-                src="/not-found.svg"
+                src="./not-found.svg"
                 alt="404 Non Trouvé"
                 className="md:aspect-video md:w-[50%]"
             />

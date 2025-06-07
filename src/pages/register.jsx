@@ -75,14 +75,14 @@ async function sendForm(e) {
   ].sort((a, b) => (a.name === ChoosenCourse ? -1 : b.name === ChoosenCourse ? 1 : 0));
 
   const BreadCrumblinks = [
-    { path: "/", label: "accuil" },
-    { path: "/préinscription", label: "préinscription" },
+    { path: "./", label: "accuil" },
+    { path: "./préinscription", label: "préinscription" },
   ];
 
   if (ChoosenCourse) BreadCrumblinks.push({ path: ChoosenCourse, label: ChoosenCourse });
 
   if (ChoosenCourse && !coursesOptions.some(option => option.name === ChoosenCourse)) {
-    window.location.replace("/404");
+    window.location.replace("./404");
     return null;
   }
 
@@ -169,7 +169,7 @@ async function sendForm(e) {
                 {btnContent}
               </button>
             </form>
-            <ImageLoader styleClasses={"w-2/3 px-4 hidden md:block  mb-[3.5rem] "} title={"form illustration"} imgSrc={"/adventure.svg"} />
+            <ImageLoader styleClasses={"w-2/3 px-4 hidden md:block  mb-[3.5rem] "} title={"form illustration"} imgSrc={"./adventure.svg"} />
           </div>
         </main>
         <Footer />

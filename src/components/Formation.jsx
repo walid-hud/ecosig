@@ -13,7 +13,7 @@ const Formation = () => {
     const course = params.course
     const courseData = formationsDiplomants.find((formation) => formation.link === course);
     if (!courseData) {
-        window.location.replace("/404");
+        window.location.replace("./404");
         return null;
     }
     const {
@@ -27,7 +27,7 @@ const Formation = () => {
         duration,
         unites
     } = courseData;
-    const BreadCrumblinks = [{ path: '/', label: 'accuil' }, { path: '/formations_diplomantes', label: 'formations diplomantes' }, { path: `./${course}`, label: course }]
+    const BreadCrumblinks = [{ path: '/', label: 'accuil' }, { path: '/formations_diplomantes', label: 'formations diplomantes' }, { path: `/${course}`, label: course }]
     return (
         <main className="h-screen mt-[4rem]">
             <BreadCrumb links={BreadCrumblinks} />

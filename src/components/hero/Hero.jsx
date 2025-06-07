@@ -33,7 +33,7 @@ const Hero = () => {
                     </NavLink>
                 </div>
             </h1>
-            <ImageLoader styleClasses={"md:scale-110"} imgSrc={"/pair-programming.svg"} title={"pair programming"} />
+            <ImageLoader styleClasses={"md:scale-110"} imgSrc={"./pair-programming.svg"} title={"pair programming"} />
             
         </section>
     );

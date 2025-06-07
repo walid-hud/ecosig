@@ -7,8 +7,8 @@ import { useLocation } from 'react-router-dom';
 const Footer = lazy(() => import('@/components/Footer'))
 
 const BreadCrumblinks = [
-  { path: "/", label: "accuil" },
-  { path: "/", label: "À propos" },
+  { path: "./", label: "accuil" },
+  { path: "./", label: "À propos" },
 ];
 
 const Objectifs = () => {
@@ -111,7 +111,7 @@ const About = () => {
             </p>
           </div>
           <div className='w-0 h-0 lg:w-1/2 lg:h-full sticky top-[4rem] '>
-            <ImageLoader imgSrc={"/team-spirit.svg"} />
+            <ImageLoader imgSrc={"./team-spirit.svg"} />
           </div>
         </div>
         <Objectifs />

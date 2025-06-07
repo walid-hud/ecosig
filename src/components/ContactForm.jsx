@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { IoMdSend as Send, } from "react-icons/io";
 import { FadeLoader } from "react-spinners";
-import { mockFetchPost } from "./utils";
+import { mockFetchPost, postToAPI } from "./utils";
 import { MdCheck, MdWarning } from "react-icons/md";
 import { toast } from "react-toastify";
 import { useRef } from "react";
@@ -18,22 +18,19 @@ const ContactForm = () => {
     setIsSubmitting(true);
     setBtnContent(<><span>envoi en cours</span><FadeLoader style={{ transform: "scale(0.5)", display: "inline-block" }} color="white" loading size={90} className="ml-2 mt-[-8px] " /></>);
     setBtnStyle("bg-blue-600 cursor-not-allowed");
-    // const formData = new FormData();
-    // formData.append("name", nameRef.current.value);
-    // formData.append("email", emailRef.current.value);
-    // formData.append("message", messageRef.current.value);
-    // formData.forEach((val,key,parent)=>console.log(`${parent} : ${key} : ${val} \n`))
+    const formData = {};
+    formData.append("name", nameRef.current.value);
+    formData.append("email", emailRef.current.value);
+    formData.append("message", messageRef.current.value);
+    console.log(formData)
     try {
-      // Simulate sending data
-      const res = await mockFetchPost();
-      if (!res.ok) {
+      const {ok, message} = await postToAPI(formData);
+      if (!ok) {
         setBtnStyle("bg-red-500 hover:bg-red-600");
         throw new Error()
       }
 
-      const data = await res.json()
-
-      if(!data || data.message == "Mock post failed"){
+      if(!message || message == "Mock post failed"){
         setBtnStyle("bg-red-500 hover:bg-red-600");
         throw new Error()
       }

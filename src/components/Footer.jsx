@@ -51,7 +51,7 @@ const Footer = () => {
             ></iframe>
             <img
               loading="lazy"
-              src="/school.jpg"
+              src="./school.jpg"
               alt="ECOSIG location"
               className="aspect-video rounded-2xl object-center object-cover md:h-full md:w-1/2 "
             />

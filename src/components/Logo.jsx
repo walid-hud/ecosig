@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import {FaPowerOff} from 'react-icons/fa';
 const Logo = ({styles}) => {
     return (
-        <NavLink   to="/">
+        <NavLink   to="./">
         <div id="logo" className={`flex  items-center text-[2.5rem] font-bold ${styles}`}>
             <span className=" ">
                 EC

@@ -9,6 +9,7 @@ import Logo from "../Logo"
 import { NavLink } from "react-router-dom"
 import { useEffect, useState } from "react";
 import Button from "../utils/Button";
+import { scrollToContact } from "../utils";
 
 const NavBar = () => {
 
@@ -60,24 +61,24 @@ const NavBar = () => {
           >
             <h1 className="smooth-underline" id="first">Accueil</h1>
           </NavLink>
-          <NavLink id="nav-link" to="/formations_diplomantes" className={({ isActive }) => isActive ? "text-blue-600" : ""}>
+          <NavLink id="nav-link" to="./formations_diplomantes" className={({ isActive }) => isActive ? "text-blue-600" : ""}>
             <h1 className="smooth-underline">Formations</h1>
           </NavLink>
           <NavLink
             id="nav-link"
-            to="/activites"
+            to="./activites"
             className={({ isActive }) => isActive ? "text-blue-600" : ""}
           >
             <h1 className="smooth-underline">Activités</h1>
           </NavLink>
           <NavLink
-            to={"/about"}
+            to={"./about"}
             id="nav-link"
             className={({ isActive }) => isActive ? "text-blue-600" : ""}
           >
             <h1 className="smooth-underline">À propos</h1>
           </NavLink>
-          <a id="nav-link" href="#contact">
+          <a id="nav-link" onClick={scrollToContact}>
             <h1 className="smooth-underline">Contact</h1>
           </a>
         </div>
@@ -157,7 +158,7 @@ const NavBar = () => {
                 <PiInfo className="text-2xl mt-[2px]" />
                 <h1 >À propos</h1>
               </NavLink>
-              <a id="nav-link" href="#contact" onClick={() => handleToggle()}>
+              <a id="nav-link"  onClick={() => {handleToggle();scrollToContact()}}>
                 <MdAlternateEmail className="text-2xl mt-[2px]" />
                 <h1>Contact</h1>
               </a>

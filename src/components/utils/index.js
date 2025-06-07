@@ -38,17 +38,31 @@ export async function Register(formData) {
 
 
 
-export async function mockFetchPost(url, data) {
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            const ok = Math.random() < 0.5;
-            resolve({
-                ok,
-                status: ok ? 200 : 400,
-                json: async () => ({
-                    message: ok ? "Mock post succeeded" : "Mock post failed"
-                })
-            });
-        }, 2000);
-    });
+export async function postToAPI(data) {
+    try {
+        const response = await fetch("http://localhost:5000/api/mock", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        });
+        const result = await response.json();
+        return {
+            ok: response.ok,
+            message: result.message || "Request completed"
+        };
+    } catch (error) {
+        return {
+            ok: false,
+            message: "An error occurred while making the request"
+        };
+    }
 }
+
+export const scrollToContact = () => {
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+        contactSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+};

@@ -19,6 +19,7 @@ return(
       title="cliquez pour plus d'infos">
 
       <h2 className="text-xl lg:text-[1.4rem] text-center font-bold"  style={{fontFamily:"var(--font-serif)"}}>{title}</h2>
+      {title == "Technicien en Gestion Informatisée" && <br/>}
       <ImageLoader imgSrc={imgLink} title={title}  />
       <p className="lg:text-lg">{info}</p>
       <div  className="flex w-full text-lg mt-4">

@@ -49,7 +49,7 @@ const TypingEffect = ({ text, speed = 100 }) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, ease: "easeIn" }}
-            className="text-pretty tracking-wider h-[28rem] md:h-fit md:text-2xl my-2  text-neutral-900  md:text-neutral-300"
+            className="text-pretty tracking-wider h-[32rem] md:h-fit md:text-2xl my-2  text-neutral-900  md:text-neutral-300"
         >
             <blockquote>{displayedText}</blockquote>
         </motion.div>

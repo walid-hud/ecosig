@@ -25,18 +25,18 @@ const Slider = () => {
           msOverflowStyle: 'none',
         }}
       >
-        <img loading="lazy" src="/1.jpg" alt="" className="inline " onError={e => { e.target.style.display = "none" }} />
-        <img loading="lazy" src="/8.jpg" alt="" className="inline -auto " onError={e => { e.target.style.display = "none" }} />
-        <img loading="lazy" src="/2.jpg" alt="" className="inline -auto" onError={e => { e.target.style.display = "none" }} />
-        <img loading="lazy" src="/3.jpg" alt="" className="inline -auto" onError={e => { e.target.style.display = "none" }} />
-        <img loading="lazy" src="/4.jpg" alt="" className="inline -auto" onError={e => { e.target.style.display = "none" }} />
-        <img loading="lazy" src="/5.jpg" alt="" className="inline -auto" onError={e => { e.target.style.display = "none" }} />
-        <img loading="lazy" src="/6.jpg" alt="" className="inline -auto" onError={e => { e.target.style.display = "none" }} />
-        <img loading="lazy" src="/7.jpg" alt="" className="inline -auto" onError={e => { e.target.style.display = "none" }} />
-        
-        <img loading="lazy" src="/9.jpg" alt="" className="inline -auto" onError={e => { e.target.style.display = "none" }} />
-        <img loading="lazy" src="/10.jpg" alt="" className="inline -auto" onError={e => { e.target.style.display = "none" }} />
-        <img loading="lazy" src="/11.jpg" alt="" className="inline -auto" onError={e => { e.target.style.display = "none" }} />
+        <img loading="lazy" src="./1.jpg" alt="" className="inline " onError={e => { e.target.style.display = "none" }} />
+        <img loading="lazy" src="./8.jpg" alt="" className="inline -auto " onError={e => { e.target.style.display = "none" }} />
+        <img loading="lazy" src="./2.jpg" alt="" className="inline -auto" onError={e => { e.target.style.display = "none" }} />
+        <img loading="lazy" src="./3.jpg" alt="" className="inline -auto" onError={e => { e.target.style.display = "none" }} />
+        <img loading="lazy" src="./4.jpg" alt="" className="inline -auto" onError={e => { e.target.style.display = "none" }} />
+        <img loading="lazy" src="./5.jpg" alt="" className="inline -auto" onError={e => { e.target.style.display = "none" }} />
+        <img loading="lazy" src="./6.jpg" alt="" className="inline -auto" onError={e => { e.target.style.display = "none" }} />
+        <img loading="lazy" src="./7.jpg" alt="" className="inline -auto" onError={e => { e.target.style.display = "none" }} />
+    
+        <img loading="lazy" src="./9.jpg" alt="" className="inline -auto" onError={e => { e.target.style.display = "none" }} />
+        <img loading="lazy" src="./10.jpg" alt="" className="inline -auto" onError={e => { e.target.style.display = "none" }} />
+        <img loading="lazy" src="./11.jpg" alt="" className="inline -auto" onError={e => { e.target.style.display = "none" }} />
       </div>
     </>
   )
