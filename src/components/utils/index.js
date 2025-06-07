@@ -40,7 +40,7 @@ export async function Register(formData) {
 
 export async function postToAPI(data) {
     try {
-        const response = await fetch("http://localhost:5000/api/mock", {
+        const response = await fetch("https://ecosig.vercel.app/api/sendMail", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -48,10 +48,10 @@ export async function postToAPI(data) {
             body: JSON.stringify(data)
         });
         const result = await response.json();
+        console.log(result);
         return {
-            ok: response.ok,
-            message: result.message || "Request completed"
-        };
+            message: result.message || null
+            };
     } catch (error) {
         return {
             ok: false,

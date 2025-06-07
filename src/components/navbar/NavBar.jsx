@@ -79,7 +79,7 @@ const NavBar = () => {
             <h1 className="smooth-underline">À propos</h1>
           </NavLink>
           <a id="nav-link" onClick={scrollToContact}>
-            <h1 className="smooth-underline">Contact</h1>
+            <h1 className="smooth-underline cursor-pointer">Contact</h1>
           </a>
         </div>
         <NavLink

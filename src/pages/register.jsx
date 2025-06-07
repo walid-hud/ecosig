@@ -3,11 +3,10 @@ const Footer = lazy(() => import("@/components/Footer"));
 import { IoMdSend as Send } from "react-icons/io";
 import BreadCrumb from "@/components/BreadCrumb"
 import { useParams } from "react-router-dom"
-import { ScrollToTop } from "@/components/utils";
+import { postToAPI, ScrollToTop } from "@/components/utils";
 import ImageLoader from "@/components/utils/Imgloader";
 import { toast } from "react-toastify";
 import { FadeLoader } from "react-spinners";
-import { mockFetchPost } from "@/components/utils";
 import { MdCheck, MdWarning } from "react-icons/md";
 
 
@@ -26,27 +25,21 @@ async function sendForm(e) {
   setIsSubmitting(true);
   setBtnContent(<><span>envoi en cours</span><FadeLoader style={{ transform: "scale(0.5)", display: "inline-block" }} color="white" loading size={90} className="ml-2 mt-[-8px] " /></>);
   setBtnStyle("bg-blue-600 cursor-not-allowed");
-  // const formData = new FormData();
-  // formData.append("name", nameRef.current.value);
-  // formData.append("email", emailRef.current.value);
-  // formData.append("message", messageRef.current.value);
-  // formData.forEach((val,key,parent)=>console.log(`${parent} : ${key} : ${val} \n`))
+  const formData = {};
+
   try {
     // Simulate sending data
-    const res = await mockFetchPost();
-    if (!res.ok) {
+    const {message} = await postToAPI(getFormValues());
+    if (message !== "Email sent successfully!") {
+      setBtnStyle("bg-red-500 hover:bg-red-600");
+      throw new Error()
+    }
+    if (!message) {
       setBtnStyle("bg-red-500 hover:bg-red-600");
       throw new Error()
     }
 
-    const data = await res.json()
-
-    if (!data || data.message == "Mock post failed") {
-      setBtnStyle("bg-red-500 hover:bg-red-600");
-      throw new Error()
-    }
-
-    if (data.message == "Mock post succeeded") {
+    if (message == "Email sent successfully!") {
       setBtnContent(<>Envoyé <MdCheck /></>);
       setBtnStyle("bg-green-500 hover:bg-green-600");
       toast.success("Envoyé")
@@ -86,13 +79,24 @@ async function sendForm(e) {
     return null;
   }
 
-  const firstName = useRef(null)
-  const lastName = useRef(null)
-  const email = useRef(null)
-  const phone = useRef(null)
-  const level = useRef(null)
-  const address = useRef(null)
-  const course = useRef(null)
+  const firstName = useRef(null);
+  const lastName = useRef(null);
+  const email = useRef(null);
+  const phone = useRef(null);
+  const level = useRef(null);
+  const address = useRef(null);
+  const course = useRef(null);
+
+  const getFormValues = () => ({
+    type:"preinscription",
+    firstName: firstName.current.value,
+    lastName:  lastName.current.value,
+    email:     email.current.value,
+    phone:     phone.current.value,
+    level:     level.current.value,
+    address: address.current?.value || "Non spécifié",
+    course:    course.current.value
+  });
 
   // Helper for field labels and placeholders
   const fieldMeta = {
@@ -103,19 +107,6 @@ async function sendForm(e) {
     level: { label: "Niveau d'études", placeholder: "EX: Bac", required: true, ref: level },
     address: { label: "Address", placeholder: "Address (optional)", required: false, ref: address }
   };
-
-  const handlSubmit = async (e) => {
-    // e.preventDefault();
-    // let formData = new FormData();
-    // formData.append("last_name", lastName.current.value);
-    // formData.append("first_name", firstName.current.value);
-    // formData.append("email", email.current.value);
-    // formData.append("phone", phone.current.value);
-    // formData.append("level", level.current.value);
-    // formData.append("address", address.current.value);
-    // formData.append("course", course.current.value);
-
-  }
 
   return (
     <>

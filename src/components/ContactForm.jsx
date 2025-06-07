@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { IoMdSend as Send, } from "react-icons/io";
 import { FadeLoader } from "react-spinners";
-import { mockFetchPost, postToAPI } from "./utils";
+import { postToAPI } from "./utils";
 import { MdCheck, MdWarning } from "react-icons/md";
 import { toast } from "react-toastify";
 import { useRef } from "react";
@@ -19,23 +19,24 @@ const ContactForm = () => {
     setBtnContent(<><span>envoi en cours</span><FadeLoader style={{ transform: "scale(0.5)", display: "inline-block" }} color="white" loading size={90} className="ml-2 mt-[-8px] " /></>);
     setBtnStyle("bg-blue-600 cursor-not-allowed");
     const formData = {};
-    formData.append("name", nameRef.current.value);
-    formData.append("email", emailRef.current.value);
-    formData.append("message", messageRef.current.value);
+    formData.type=  "contact" 
+    formData.fullName = nameRef.current.value;
+    formData.email = emailRef.current.value;
+    formData.message = messageRef.current.value;
     console.log(formData)
     try {
       const {ok, message} = await postToAPI(formData);
-      if (!ok) {
+      if (message !== "Email sent successfully!" ) {
         setBtnStyle("bg-red-500 hover:bg-red-600");
         throw new Error()
       }
 
-      if(!message || message == "Mock post failed"){
+      if(!message){
         setBtnStyle("bg-red-500 hover:bg-red-600");
         throw new Error()
       }
 
-      if(data.message == "Mock post succeeded"){
+      if(message === "Email sent successfully!"){
         setBtnContent(<>Envoyé <MdCheck /></>);
         setBtnStyle("bg-green-500 hover:bg-green-600");
         toast.success("Envoyé")
