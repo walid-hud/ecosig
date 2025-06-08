@@ -15,6 +15,11 @@ import PageNotFound from './components/PageNotFound'
 import { BarLoader } from 'react-spinners'
 // import { StrictMode } from 'react'
 
+// Disable console logs, errors, and warnings
+console.log = () => {};
+console.error = () => {};
+console.warn = () => {};
+
 createRoot(document.getElementById('root')).render(
     // <StrictMode>
 
@@ -35,7 +40,6 @@ createRoot(document.getElementById('root')).render(
         </Routes>
     </Router>
 </Suspense>
-
 
     // </StrictMode>
 )
